@@ -192,8 +192,8 @@ left: 0;
   } 
   .load-more {
     position: absolute;
-    transform:  scale(1.2);
-    transition: transform 300ms linear;
+    transform: translate(-150%, 150%) scale(1.7) rotate(5turn);
+    transition: transform 400ms linear;
   
 
   }
