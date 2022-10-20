@@ -96,7 +96,7 @@ img {
     width: 100%;
     height: 50%;
 border-radius: 5px 5px 0 0;
-transition: transform 400ms linear;
+transition: transform 1400ms linear;
 }
 
 
@@ -114,17 +114,16 @@ transition: transform 400ms linear;
 
   .photo-card {
     position: relative;
-    transition: box-shadow, transform 500ms linear;
+    transition: box-shadow, transform 200ms linear;
     border-radius: 5px;
     background-color: rgba(6, 17, 22, 0.921);
     width: 200px;
     height: 250px;
-    transition: transform 400ms linear;
+   
   }
 
   .photo-card:hover {
-   
-  transform: scale(1.1);
+   transform: scale(1.02);
   box-shadow: 0px 1px 20px 2px rgba(48,186,153,0.75);
   -webkit-box-shadow: 0px 1px 20px 2px rgba(48,186,153,0.75);
   -moz-box-shadow: 0px 1px 20px 2px rgba(48,186,153,0.75);
@@ -132,11 +131,28 @@ transition: transform 400ms linear;
   
 
  .photo-card:hover img {
- 
   border-radius: 5px;
-  transform: translateY(35%) scale(1.17);
   cursor: pointer;
+  animation: rotateX 500ms cubic-bezier(.08,1.47,.83,.67) ;
  }
+
+ @keyframes rotateX {
+  0% {
+    transform: perspective(100px) rotateX(0deg);
+  }
+  20% {
+    transform: perspective(100px) rotateX(-3deg);
+  }
+  50% {
+    transform: perspective(100px) rotateX(-5deg);
+  }
+70% { transform: perspective(100px) rotateX(-3deg);
+}
+  100% {
+    transform: perspective(100px) rotateX(0deg);
+  }
+}
+
   
   .info {
     padding:10px;
