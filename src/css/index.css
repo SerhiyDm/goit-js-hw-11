@@ -1,0 +1,199 @@
+body {
+margin: 0;
+
+background-image: url('../img/logo_square.svg');
+background-size: 5vw;
+background-repeat:repeat;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+input {
+    padding:10px 10px 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(87, 193, 209);
+    text-shadow: 0px 0px 10px rgba(48,186,153,0.91);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: .09em;
+    background-color: rgba(4, 4, 18, 0.836);
+    transition: background-color 300ms linear;
+}
+
+input::placeholder{
+    color: rgb(87, 193, 209); 
+    text-shadow: 0px 0px 10px rgba(48,186,153,0.91);
+}
+
+input:focus {
+    outline: none;
+    background: rgb(174,238,228);
+    background: radial-gradient(circle, rgba(174,238,228,1) 0%, rgba(87,193,209,1) 100%);
+    color: rgba(4, 4, 18, 0.836);
+    text-shadow: 0px 0px 11px rgb(240, 244, 244);        
+    box-shadow: 0px 1px 39px 2px rgba(48,186,153,0.75);
+-webkit-box-shadow: 0px 1px 39px 2px rgba(48,186,153,0.75);
+-moz-box-shadow: 0px 1px 39px 2px rgba(48,186,153,0.75);
+}
+
+input:focus::placeholder {
+color: rgb(76, 72, 67);
+}
+
+
+button {
+    padding:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000;
+    text-shadow: 0px 0px 11px rgb(240, 244, 244);        
+    background: rgb(174,238,228);
+background: radial-gradient(circle, rgba(174,238,228,1) 0%, rgba(87,193,209,1) 100%);
+    box-shadow: 0px 1px 39px 2px rgba(48,186,153,0.75);
+-webkit-box-shadow: 0px 1px 39px 2px rgba(48,186,153,0.75);
+-moz-box-shadow: 0px 1px 39px 2px rgba(48,186,153,0.75);
+
+}
+
+.disabled {
+  background: rgba(7, 40, 47, 0.882);
+  color: rgb(88, 122, 124);
+  text-shadow: unset;
+   box-shadow: 0px 1px 9px 0px rgba(48,186,153,0.75);
+  -webkit-box-shadow: 0px 1px 9px 0px rgba(48,186,153,0.75);
+  -moz-box-shadow: 0px 1px 9px 0px rgba(48,186,153,0.75);
+
+}
+.header {
+    position:fixed;
+    z-index: 22;
+    top: 0;
+    left: 0;
+    right: 0;
+     display:flex;
+     margin: 0;
+     padding: 10px 0;
+     
+      justify-content:center;
+      align-items: center;
+      background-color: rgba(4, 4, 18, 0.836);
+    
+}
+.is-hidden {
+    display: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 50%;
+border-radius: 5px 5px 0 0;
+transition: transform 400ms linear;
+}
+
+
+
+.gallery {
+    display: grid;
+    gap: 7px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 100%;
+    max-width: 95vw;
+    justify-content: center;
+    padding: 100px 0 0 0;
+    margin: 0 auto;
+  }
+
+  .photo-card {
+    position: relative;
+    transition: box-shadow, transform 500ms linear;
+    border-radius: 5px;
+    background-color: rgba(6, 17, 22, 0.921);
+    width: 200px;
+    height: 250px;
+    transition: transform 400ms linear;
+  }
+
+  .photo-card:hover {
+   
+  transform: scale(1.1);
+  box-shadow: 0px 1px 20px 2px rgba(48,186,153,0.75);
+  -webkit-box-shadow: 0px 1px 20px 2px rgba(48,186,153,0.75);
+  -moz-box-shadow: 0px 1px 20px 2px rgba(48,186,153,0.75);
+ }
+  
+
+ .photo-card:hover img {
+ 
+  border-radius: 5px;
+  transform: translateY(35%) scale(1.17);
+  cursor: pointer;
+ }
+  
+  .info {
+    padding:10px;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .info-item {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 0.08em;
+    line-height: .5em;
+    color: rgb(98, 219, 243);
+    text-shadow: 0px 0px 14px rgba(12, 15, 14 );
+  }
+  .backdrop {
+    transition: opacity 250ms linear, visibility 250ms linear;
+    position: fixed;
+    top: 0;
+left: 0;
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000cc;
+    overflow-y: auto;
+  }
+  
+   .backdrop.is--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .loader {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 17px solid #64dbf3;
+    border-right: 10px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 2s cubic-bezier(.63,.42,.11,.96) infinite;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  .load-more {
+    position: absolute;
+    transform:  scale(1.2);
+    transition: transform 300ms linear;
+  
+
+  }

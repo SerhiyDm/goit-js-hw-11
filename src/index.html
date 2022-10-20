@@ -4,18 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
+    <link rel="stylesheet" href="./css/index.css">
     
-    <script type="module" src="./js/index.js"></script>
   </head>
   <body>
-    <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <button type="submit">Search</button>
-    </form>
+    <header class="header">
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button type="submit" class="search is-hidden" data-search>Search</button>
+        <button type="button" class="is-hidden" disabled data-load-more>Load more</button>
+      </form>
+    </header>
+    <div class="gallery">
+      <!-- Картки зображень -->
+    </div>
+    <div class="backdrop is--hidden"><span class="loader"></span></div>
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>
