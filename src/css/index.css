@@ -133,23 +133,15 @@ transition: transform 1400ms linear;
  .photo-card:hover img {
   border-radius: 5px;
   cursor: pointer;
-  animation: rotateX 500ms cubic-bezier(.08,1.47,.83,.67) ;
+  animation: rotateX 500ms cubic-bezier(.08,1.47,.83,.67) reverse;
  }
 
  @keyframes rotateX {
   0% {
     transform: perspective(100px) rotateX(0deg);
   }
-  20% {
-    transform: perspective(100px) rotateX(-3deg);
-  }
-  50% {
-    transform: perspective(100px) rotateX(-5deg);
-  }
-70% { transform: perspective(100px) rotateX(-3deg);
-}
   100% {
-    transform: perspective(100px) rotateX(0deg);
+    transform: perspective(100px) rotateX(-5deg);
   }
 }
 
