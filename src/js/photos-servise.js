@@ -5,7 +5,8 @@ export default class PhotosApiService {
         this.page = 1;
         this.totalPages = 1;
         this.cssClass = 'is--hidden';
-        this.searchParams = {image_type: 'photo',
+        this.searchParams = {
+            image_type: 'photo',
         orientation: 'horizontal',
         safesearch: true,
         per_page: 40,
@@ -18,7 +19,6 @@ export default class PhotosApiService {
         const API_KEY = '30681276-5df088d4e4761da157226470c';
        
         const { data } = await axios.get(`?key=${API_KEY}&q=${this.searchQuery}&${searchParams}&page=${this.page}`);
-                this.incrementPage();
                 return data;
             }
     incrementPage() {

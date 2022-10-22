@@ -37,8 +37,9 @@ const loadingAnim = refs.onLoadOverlay;
       });
     };
     const observer = new IntersectionObserver(callback, options);
-
-
+    refs.input.addEventListener('focus', (e) => {
+e.currentTarget.value = '';
+    })
 refs.form.addEventListener('input', (event) => {
     if(!trimEnterValueToLowerCase(event.target.value)) {
         noButton(refs.buttonSearch);
@@ -93,7 +94,7 @@ try {
       });
     return
   }
-
+photosApiService.incrementPage();
   isButton(btLdM);
   disabledButton(btLdM);
   const target = document.querySelector('.photo-card:last-child');
